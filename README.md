@@ -11,6 +11,19 @@ Rubix cube simulator
   - `face`: the below face enum to identify the face
   - `clockwise`: a boolean saying if we are rotating clockwise (true) or counter clockwise (false)
   - Rotates the corresponding face the correct way
+- `get_edges(face)` return tuple(top, bottom, left, right)
+  - tuple return is 4 arrays of the edge data
+  - Mapping:
+
+| Face          | Top Edge        | Bottom Edge     | Left Edge       | Right Edge        |
+|---------------|-----------------|-----------------|-----------------| ----------------- |
+| Front (Green) | Up (W) bottom   | Down (Y) top    | Left (O) right  | Right (R) left    |
+| Back (Blue)   | Up (W) top      | Down (Y) bottom | Right (R) right | Left (O) left     |
+| Left (Orange) | Up (W) left     | Down (Y) left   | Back (B) right  | Front (G) left    |
+| Right (Red)   | Up (W) right    | Down (Y) right  | Front (G) right | Back (B) left     |
+| Up (White)    | Back (B) top    | Front (G) top   | Left (O) top    | Right (R) top     |
+| Down (Yellow) | Front (G) bottom| Back (B) bottom | Left (O) bottom | Right (R) bottom  |
+
 - `shuffle(moves)` 
   - `moves`: the number of rotations to use to shuffle the cube
   - Randomly decides which face to rotate in which direction
